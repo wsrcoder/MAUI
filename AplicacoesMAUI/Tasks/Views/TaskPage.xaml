@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tasks.Views.TaskPage"
+             Title="TaskPage">
+    <Grid>
+
+        
+        <VerticalStackLayout>
+            <BoxView 
+                HeightRequest="5" 
+                Color="{StaticResource Black}"
+            />
+
+                <VerticalStackLayout Padding="20">
+                <Button
+                    Text="x"
+                    HorizontalOptions="End"/>
+
+                <Entry Placeholder="Tarefa" />
+                <Editor Placeholder="Descrição"/>
+
+                <DatePicker />
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                        VerticalOptions="Center"
+                        Text="Etapas (Subtarefas)"
+                         />
+                    <Button
+                        HorizontalOptions="EndAndExpand"
+                        Text="+"/>
+                </StackLayout>
+        
+                <Grid ColumnDefinitions="30, *, 30">
+                    <CheckBox Grid.Column="0" />
+                    <Label 
+                        Grid.Column="1" 
+                        Text="Tarefas"
+                        VerticalOptions="Center"/>
+                    <Label 
+                        Grid.Column="2"  
+                        Text="Trash" 
+                        VerticalOptions="Center"/>
+                </Grid>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+            <Button 
+            Margin="15"
+            Text="Salvar"
+            HorizontalOptions="Center"
+            VerticalOptions="End"/>
+    </Grid>
+</ContentPage>
