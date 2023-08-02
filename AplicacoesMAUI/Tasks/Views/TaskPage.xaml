@@ -14,7 +14,11 @@
 
                 <VerticalStackLayout Padding="20">
                 <Button
-                    Text="x"
+                    Padding="0"
+                    Text="X"
+                    Clicked="OnCloseModal"
+                    MinimumHeightRequest="31"
+                    MinimumWidthRequest="31"
                     HorizontalOptions="End"/>
 
                 <Entry Placeholder="Tarefa" />
@@ -29,8 +33,12 @@
                         Text="Etapas (Subtarefas)"
                          />
                     <Button
+                        Padding="0"
                         HorizontalOptions="EndAndExpand"
-                        Text="+"/>
+                        Text="+"
+                        Clicked="OnAddStep"
+                        MinimumHeightRequest="31"
+                        MinimumWidthRequest="31"/>
                 </StackLayout>
         
                 <Grid ColumnDefinitions="30, *, 30">
@@ -50,6 +58,8 @@
             Margin="15"
             Text="Salvar"
             HorizontalOptions="Center"
-            VerticalOptions="End"/>
+            VerticalOptions="End"
+            Clicked="OnSaveData"
+                />
     </Grid>
 </ContentPage>
