@@ -1,3 +1,5 @@
+
+
 namespace Tasks.Views;
 
 public partial class TaskPage : ContentPage
@@ -20,5 +22,12 @@ public partial class TaskPage : ContentPage
     private void OnSaveData(object sender, EventArgs e)
     {
         Navigation.PopModalAsync();
+    }
+
+    protected override void OnSizeAllocated(double width, double height)
+    {
+        base.OnSizeAllocated(width, height);
+
+        DatePickerTaskDate.WidthRequest = width -30;
     }
 }

@@ -8,7 +8,9 @@ namespace Tasks
     {
         public App()
         {
-            
+
+            CustomHandler();
+
 
             InitializeComponent();
 
@@ -16,24 +18,50 @@ namespace Tasks
         }
 
 
-        private void CustomHandler()
+        private void EntryNoBorders()
         {
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoBorder", (handler, view) => {
 
-                #if ANDROID
-                
-                    handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToPlatform());
-                #endif
+            #if ANDROID
 
-                #if IOS || MACCATALYST
+                handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToPlatform());
+            #endif
+
+            #if IOS || MACCATALYST
                 
                     handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
-                #endif
+            #endif
 
-                #if WINDOWS        
+            #if WINDOWS
                     handler.PlatformView.BorderThickness = new Thickness(0).ToPlatform();
-                #endif
+            #endif
             });
+        }
+
+        private void DatePickerNoBorders()
+        {
+            Microsoft.Maui.Handlers.DatePickerHandler.Mapper.AppendToMapping("NoBorder", (handler, view) => {
+
+            #if ANDROID
+
+                handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToPlatform());
+            #endif
+
+            #if IOS || MACCATALYST
+                
+                    handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+            #endif
+
+            #if WINDOWS
+                    handler.PlatformView.BorderThickness = new Thickness(0).ToPlatform();
+            #endif
+            });
+        }
+
+        private void CustomHandler()
+        {
+           EntryNoBorders();
+           DatePickerNoBorders();
         }
     }
 }

@@ -12,7 +12,7 @@
                 Color="{StaticResource Black}"
             />
 
-                <VerticalStackLayout Padding="20">
+                <VerticalStackLayout Padding="20" Spacing="10">
                 <Button
                     Padding="0"
                     Text="X"
@@ -21,10 +21,19 @@
                     MinimumWidthRequest="31"
                     HorizontalOptions="End"/>
 
-                <Entry Placeholder="Tarefa" />
-                <Editor Placeholder="Descrição"/>
+                <Border StrokeShape="RoundRectangle 10">
+                    <Entry Placeholder="Tarefa" />
+                </Border>
 
-                <DatePicker />
+                <Border StrokeShape="RoundRectangle 10">
+                    <Editor Placeholder="Descrição" 
+                            HeightRequest="200"/>
+                </Border>
+
+                <Border StrokeShape="RoundRectangle 10">
+                    <DatePicker x:Name="DatePickerTaskDate"
+                        BackgroundColor="BlanchedAlmond"/>
+                </Border>
 
 
                 <StackLayout Orientation="Horizontal">
